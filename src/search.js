@@ -46,7 +46,6 @@ class SearchList extends React.Component {
           <td>{item.transaction.id}</td>
           <td>{item.transaction.project.name}</td>
           <td>{item.transaction.payment_method.name}</td>
-          <td>{item.transaction.transfer_date}</td>
           <td>{item.user.name}</td>
           <td>{item.user.email}</td>
           <td>{item.payment_details.payment.amount}</td>
@@ -65,7 +64,6 @@ class SearchList extends React.Component {
             <th>ID</th>
             <th>PROJECT NAME</th>
             <th>PAYMENT METHOD</th>
-            <th>DATE</th>
             <th>NAME</th>
             <th>E-MAIL</th>
             <th>AMOUNT</th>
