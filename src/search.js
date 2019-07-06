@@ -33,16 +33,6 @@ class InputSearch extends React.Component {
   }
 }
 
-function FormatDate(c) {
-  var a = new Date;
-  a.setTime(Date.parse(c));
-  // a.setTime(Date.parse(b));
-  // var d = a.getFullYear(),
-  //     e = a.getMonth(),
-  //     f = a.getDate();
-  // b ? a.setTime(Date.parse(b)) : a = new Date;
-  return a;
-};
 
 class SearchList extends React.Component {
   constructor(props) {
