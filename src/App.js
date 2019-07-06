@@ -105,7 +105,7 @@ class Data extends Component {
               </table>
             </div>
             <div className="col-4">
-              <h2>PAYMENTS LIST</h2>
+              <h2>PROJECTS LIST</h2>
               <table className="table table-striped table-bordered col-4">
                 <thead>
                   <tr>
