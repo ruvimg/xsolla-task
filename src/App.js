@@ -58,7 +58,6 @@ class Data extends Component {
       }
       resList.sort(compareCounts);
       var paymentsList = resList;
-      //end-test
 
       var rawData = items;
       //Собираем список всех проектов, по которым совершались платежи
