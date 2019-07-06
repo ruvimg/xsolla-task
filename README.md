@@ -6,8 +6,8 @@ Clone this repo to your local machine using https://github.com/ruvimg/xsolla-tas
 
 <h1>Setup</h1>
 
-<code>install npm dependencies (in "src" folder)</code>
+<code>install npm dependencies</code>
 $ npm install
 
-<code>Run the app (in "src" folder)</code>
+<code>Run the app</code>
 $ npm start
