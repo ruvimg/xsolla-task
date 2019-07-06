@@ -3,18 +3,15 @@ import { Doughnut } from "react-chartjs-2";
 import Search from "./search";
 import { DataProvider } from "./dataProvider.jsx";
 
-
 class Data extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     items: [],
+      items: [],
       isLoaded: false
     };
   }
   componentDidMount() {
-        this.setState({
-          isLoaded: true,
           items: DataProvider.all()
         });
   }
