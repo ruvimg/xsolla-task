@@ -54,7 +54,6 @@ class Data extends Component {
       }
       resList.sort(compareCounts);
       var paymentsList = resList;
-      
 
       var rawData = items;
       let resultList = [];
@@ -76,26 +75,28 @@ class Data extends Component {
       return (
         <div className="container-fluid">
           <div className="row">
-            <div className="col-4">
+            <div className="col-3">
               <h2>PROJECTS LIST</h2>
-              <table className="table table-striped table-bordered col-4">
-                <thead>
-                  <tr>
-                    <th>PROJECT NAME</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {resultList.map(item => (
+              <div class="table-responsive">
+                <table className="table table-striped table-bordered table-sm">
+                  <thead>
                     <tr>
-                      <td>{item}</td>
+                      <th>PROJECT NAME</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {resultList.map(item => (
+                      <tr>
+                        <td>{item}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div className="col-4">
+            <div className="col-3">
               <h2>PAYMENTS TOP</h2>
-              <table className="table table-striped table-bordered">
+              <table className="table table-striped table-bordered table-sm">
                 <thead>
                   <tr>
                     <th>NAME</th>
@@ -112,8 +113,8 @@ class Data extends Component {
                 </tbody>
               </table>
             </div>
-            <div className="col-4">
-              <h2>Rating</h2>
+            <div className="col-6">
+              <h2 className="text-center">Rating</h2>
               <Doughnut data={data} />
             </div>
           </div>
