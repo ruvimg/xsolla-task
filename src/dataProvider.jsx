@@ -5762,12 +5762,12 @@ export const DataProvider = {
     filterData: function (value) {
         const rows = [];
         this.all().forEach(function (item) {
-            if (item.user.email != null) {
-              if (item.user.email.toUpperCase().indexOf(value.toUpperCase()) != -1) {
+            if (item.transaction.project.name != null) {
+              if (item.transaction.project.name.toUpperCase().indexOf(value.toUpperCase()) != -1) {
                 rows.push(item);
               }
-                else if (item.transaction.project.name != null) {
-                  if (item.transaction.project.name.toUpperCase().indexOf(value.toUpperCase()) != -1) {
+                else if (item.user.email != null) {
+                  if (item.user.email.toUpperCase().indexOf(value.toUpperCase()) != -1) {
                     rows.push(item);
                 }
                 }
