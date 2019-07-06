@@ -12,19 +12,18 @@ class Data extends Component {
     };
   }
   componentDidMount() {
-          items: DataProvider.all()
-        });
+    this.setState({
+      isLoaded: true,
+      items: DataProvider.all()
+    });
   }
 
-  
- 
   render() {
     var { isLoaded, items } = this.state;
     if (!isLoaded) {
       return <div>load</div>;
     } else {
       var rawData = items;
-      //test
       let resList = [];
       for (let i = 0; i < rawData.length; i++) {
         if (
@@ -55,9 +54,9 @@ class Data extends Component {
       }
       resList.sort(compareCounts);
       var paymentsList = resList;
+      
 
       var rawData = items;
-      //Собираем список всех проектов, по которым совершались платежи
       let resultList = [];
       for (let i = 0; i < rawData.length; i++) {
         if (resultList.indexOf(rawData[i].transaction.project.name) == -1) {
@@ -78,8 +77,21 @@ class Data extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-4">
-              <h2>Rating</h2>
-              <Doughnut data={data} />
+              <h2>PROJECTS LIST</h2>
+              <table className="table table-striped table-bordered col-4">
+                <thead>
+                  <tr>
+                    <th>PROJECT NAME</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {resultList.map(item => (
+                    <tr>
+                      <td>{item}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
             <div className="col-4">
               <h2>PAYMENTS TOP</h2>
@@ -101,24 +113,11 @@ class Data extends Component {
               </table>
             </div>
             <div className="col-4">
-              <h2>PROJECTS LIST</h2>
-              <table className="table table-striped table-bordered col-4">
-                <thead>
-                  <tr>
-                    <th>PROJECT NAME</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {resultList.map(item => (
-                    <tr>
-                      <td>{item}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <h2>Rating</h2>
+              <Doughnut data={data} />
             </div>
-            </div>
-            <Search />   
+          </div>
+          <Search />
         </div>
       );
     }
